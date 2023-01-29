@@ -10,7 +10,6 @@
     <TableColumn label="name" prop="name" />
 </BaseTable>
 
-
 ```
 
 
