@@ -3,6 +3,7 @@
 import { inject, h, useSlots, onMounted } from 'vue'
 import get from 'lodash/get'
 const addColumn = inject('addColumn')
+const style = inject<string>('tdStyle')
 
 const props = defineProps<{
     prop?: string
@@ -22,7 +23,7 @@ const slot = useSlots()
 
 onMounted(() => {
     const attrs = row => ({
-        class: 'whitespace-nowrap px-3 py-4 text-sm cursor-pointer group-first:pl-6 truncate flex-grow',
+        class: style,
         style: { 'max-width': maxWidth }
     })
     addColumn({
